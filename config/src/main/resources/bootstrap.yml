@@ -1,0 +1,17 @@
+## Spring Cloud 应用提供使用 bootstrap.yml 负责从外部资源加载配置属性
+
+spring:
+  application:
+    name: config
+  profiles:
+    active: native #使用本地配置
+    
+eureka:
+  instance:
+    non-secure-port: ${server.port:8888} #服务端口，非SSL，若环境变量中存在server.port，则使用变量值，不存在则使用8888端口
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value} #使用 application.name 作为 Eureka Server 的实例ID
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/ #5
+
