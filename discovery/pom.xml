@@ -11,7 +11,7 @@
 
     <artifactId>discovery</artifactId>
     <name>discovery</name>
-    <description>服务发现 Eureka Server</description>
+    <description>服务发现，微服务注册中心 -- Eureka Server</description>
 
     <dependencies>
         <dependency>
